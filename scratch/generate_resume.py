@@ -5,75 +5,75 @@ class ResumePDF(FPDF):
     def header(self):
         # Top banner with name and title
         self.set_fill_color(15, 16, 83) # Deep Navy (#0F1053)
-        self.rect(0, 0, 210, 55, 'F')
+        self.rect(0, 0, 210, 42, 'F')
         
         # Name
         self.set_text_color(255, 255, 255)
-        self.set_font("helvetica", "B", 26)
-        self.set_y(8)
-        self.cell(0, 10, "IMRAN KHAN R", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.set_font("helvetica", "B", 24)
+        self.set_y(6)
+        self.cell(0, 8, "IMRAN KHAN R", align="C", new_x="LMARGIN", new_y="NEXT")
         
         # Subtitle
-        self.set_font("helvetica", "B", 12)
+        self.set_font("helvetica", "B", 11)
         self.set_text_color(189, 227, 255) # Light Blue (#BDE3FF)
-        self.cell(0, 6, "SALES & OPERATIONAL EXECUTIVE", align="C", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 5, "SALES & OPERATIONAL EXECUTIVE", align="C", new_x="LMARGIN", new_y="NEXT")
         
         # Contact Details - Address left paragraph | Phone & Email right
-        self.set_font("helvetica", "", 8.5)
+        self.set_font("helvetica", "", 8)
         self.set_text_color(240, 249, 255) # Pale Blue (#F0F9FF)
-        y_contact = self.get_y() + 2
+        y_contact = self.get_y() + 1.5
 
         # Address as left-aligned paragraph
-        self.set_xy(15, y_contact)
-        self.multi_cell(110, 4.5,
+        self.set_xy(10, y_contact)
+        self.multi_cell(115, 3.8,
             "2/1107 Annai Sathya Nagar,\nSakkimangalam, Madurai - 625201,\nTamil Nadu",
             align="L")
 
         # Phone & Email - right side
         self.set_xy(125, y_contact)
-        self.multi_cell(70, 4.5,
+        self.multi_cell(75, 3.8,
             "+91 97156 20426\n111imrankhan111@gmail.com",
             align="R")
 
-        self.set_y(58)
+        self.set_y(44)
 
     def add_section_header(self, title):
-        self.ln(3)
-        self.set_font("helvetica", "B", 13)
+        self.ln(1.5)
+        self.set_font("helvetica", "B", 11)
         self.set_text_color(15, 16, 83) # Deep Navy (#0F1053)
-        self.cell(0, 6, title, new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 5, title, new_x="LMARGIN", new_y="NEXT")
         
         # Underline
         self.set_draw_color(15, 16, 83)
-        self.set_line_width(0.5)
-        self.line(self.get_x(), self.get_y(), 210 - 15, self.get_y())
-        self.ln(3)
+        self.set_line_width(0.4)
+        self.line(self.get_x(), self.get_y(), 210 - 10, self.get_y())
+        self.ln(1.5)
 
     def add_job(self, title, company, date, bullets):
-        self.set_font("helvetica", "B", 10.5)
+        self.set_font("helvetica", "B", 9.5)
         self.set_text_color(15, 16, 83)
-        self.cell(120, 5, f"{title} - {company}", new_x="RIGHT", new_y="LAST")
-        self.set_font("helvetica", "I", 9.5)
+        self.cell(130, 4.5, f"{title} - {company}", new_x="RIGHT", new_y="LAST")
+        self.set_font("helvetica", "I", 8.5)
         self.set_text_color(100, 100, 100)
-        self.cell(0, 5, date, align="R", new_x="LMARGIN", new_y="NEXT")
+        self.cell(0, 4.5, date, align="R", new_x="LMARGIN", new_y="NEXT")
         
-        self.set_font("helvetica", "", 9)
+        self.set_font("helvetica", "", 8)
         self.set_text_color(70, 70, 80)
         for bullet in bullets:
-            self.cell(5, 4, "-", align="C")
+            self.cell(4, 3.2, "-", align="C")
             # MultiCell for wrapping long bullet points
-            self.multi_cell(0, 4, bullet, new_x="LMARGIN", new_y="NEXT")
-        self.ln(2.5)
+            self.multi_cell(0, 3.2, bullet, new_x="LMARGIN", new_y="NEXT")
+        self.ln(1)
 
 # Initialize PDF
 pdf = ResumePDF(orientation="P", unit="mm", format="A4")
-pdf.set_margins(15, 15, 15)
-pdf.set_auto_page_break(auto=True, margin=15)
+pdf.set_margins(10, 10, 10)
+pdf.set_auto_page_break(auto=True, margin=10)
 pdf.add_page()
 
 # SUMMARY
 pdf.add_section_header("PROFESSIONAL SUMMARY")
-pdf.set_font("helvetica", "", 9.5)
+pdf.set_font("helvetica", "", 8.5)
 pdf.set_text_color(70, 70, 80)
 summary_text = (
     "Results-oriented Sales & Operational Executive with over 8 years of experience "
@@ -82,7 +82,7 @@ summary_text = (
     "Proficient in leveraging data analytics and AI automation tools (CRM, SQL, n8n workflows) to optimize sales processes "
     "and maximize customer engagement."
 )
-pdf.multi_cell(0, 4.5, summary_text, new_x="LMARGIN", new_y="NEXT")
+pdf.multi_cell(0, 3.8, summary_text, new_x="LMARGIN", new_y="NEXT")
 
 # EXPERIENCE
 pdf.add_section_header("PROFESSIONAL EXPERIENCE")
@@ -144,47 +144,47 @@ pdf.add_job("Quality Controller", "J.K Fenner Pvt Ltd", "2018", fenner_bullets)
 # SKILLS & CERTIFICATIONS
 pdf.add_section_header("SKILLS & CERTIFICATIONS")
 
-pdf.set_font("helvetica", "B", 9.5)
+pdf.set_font("helvetica", "B", 8.5)
 pdf.set_text_color(15, 16, 83)
-pdf.cell(45, 5, "Business & Analytics:", new_x="RIGHT", new_y="LAST")
-pdf.set_font("helvetica", "", 9)
+pdf.cell(40, 4, "Business & Analytics:", new_x="RIGHT", new_y="LAST")
+pdf.set_font("helvetica", "", 8)
 pdf.set_text_color(70, 70, 80)
-pdf.cell(0, 5, "Advanced Excel, SQL, Tableau, Google Data Studio, KPI Dashboards", new_x="LMARGIN", new_y="NEXT")
+pdf.cell(0, 4, "Advanced Excel, SQL, Tableau, Google Data Studio, KPI Dashboards", new_x="LMARGIN", new_y="NEXT")
 
-pdf.set_font("helvetica", "B", 9.5)
+pdf.set_font("helvetica", "B", 8.5)
 pdf.set_text_color(15, 16, 83)
-pdf.cell(45, 5, "CRM & AI Tools:", new_x="RIGHT", new_y="LAST")
-pdf.set_font("helvetica", "", 9)
+pdf.cell(40, 4, "CRM & AI Tools:", new_x="RIGHT", new_y="LAST")
+pdf.set_font("helvetica", "", 8)
 pdf.set_text_color(70, 70, 80)
-pdf.cell(0, 5, "HubSpot CRM, OpenAI GPT, n8n Workflows", new_x="LMARGIN", new_y="NEXT")
+pdf.cell(0, 4, "HubSpot CRM, OpenAI GPT, n8n Workflows", new_x="LMARGIN", new_y="NEXT")
 
-pdf.set_font("helvetica", "B", 9.5)
+pdf.set_font("helvetica", "B", 8.5)
 pdf.set_text_color(15, 16, 83)
-pdf.cell(45, 5, "Agentic Tool Skills:", new_x="RIGHT", new_y="LAST")
-pdf.set_font("helvetica", "", 9)
+pdf.cell(40, 4, "Agentic Tool Skills:", new_x="RIGHT", new_y="LAST")
+pdf.set_font("helvetica", "", 8)
 pdf.set_text_color(70, 70, 80)
-pdf.cell(0, 5, "Sales Intelligence Team, Recruitment Agent, Data Analyst Agent, Customer Support Agent", new_x="LMARGIN", new_y="NEXT")
+pdf.cell(0, 4, "Sales Intelligence Team, Recruitment Agent, Data Analyst Agent, Customer Support Agent", new_x="LMARGIN", new_y="NEXT")
 
-pdf.set_font("helvetica", "B", 9.5)
+pdf.set_font("helvetica", "B", 8.5)
 pdf.set_text_color(15, 16, 83)
-pdf.cell(45, 5, "Education:", new_x="RIGHT", new_y="LAST")
-pdf.set_font("helvetica", "", 9)
+pdf.cell(40, 4, "Education:", new_x="RIGHT", new_y="LAST")
+pdf.set_font("helvetica", "", 8)
 pdf.set_text_color(70, 70, 80)
-pdf.cell(0, 5, "B.E. Mechanical Engineering", new_x="LMARGIN", new_y="NEXT")
+pdf.cell(0, 4, "B.E. Mechanical Engineering", new_x="LMARGIN", new_y="NEXT")
 
-pdf.set_font("helvetica", "B", 9.5)
+pdf.set_font("helvetica", "B", 8.5)
 pdf.set_text_color(15, 16, 83)
-pdf.cell(45, 5, "Certifications:", new_x="RIGHT", new_y="LAST")
-pdf.set_font("helvetica", "", 9)
+pdf.cell(40, 4, "Certifications:", new_x="RIGHT", new_y="LAST")
+pdf.set_font("helvetica", "", 8)
 pdf.set_text_color(70, 70, 80)
-pdf.cell(0, 5, "CISCO Data Analyst, Tableau Fundamentals, HubSpot CRM Certified", new_x="LMARGIN", new_y="NEXT")
+pdf.cell(0, 4, "CISCO Data Analyst, Tableau Fundamentals, HubSpot CRM Certified", new_x="LMARGIN", new_y="NEXT")
 
-pdf.set_font("helvetica", "B", 9.5)
+pdf.set_font("helvetica", "B", 8.5)
 pdf.set_text_color(15, 16, 83)
-pdf.cell(45, 5, "Languages:", new_x="RIGHT", new_y="LAST")
-pdf.set_font("helvetica", "", 9)
+pdf.cell(40, 4, "Languages:", new_x="RIGHT", new_y="LAST")
+pdf.set_font("helvetica", "", 8)
 pdf.set_text_color(70, 70, 80)
-pdf.cell(0, 5, "English (Professional), Tamil (Native)", new_x="LMARGIN", new_y="NEXT")
+pdf.cell(0, 4, "English (Professional), Tamil (Native)", new_x="LMARGIN", new_y="NEXT")
 
 # Save PDF
 output_path = r"c:\imran-portfolio-laravel\public\resume.pdf"

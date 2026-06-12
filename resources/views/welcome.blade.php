@@ -2,7 +2,7 @@
 <html class="light" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
     <title>Imran Khan R - Portfolio</title>
     
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -294,21 +294,335 @@
         .footer-fade-item {
             opacity: 0;
         }
+
+        /* Safe Areas and Dynamic Island support */
+        nav.fixed {
+            padding-top: calc(1rem + env(safe-area-inset-top, 0px)) !important;
+            padding-bottom: 1rem !important;
+        }
+        main {
+            padding-top: calc(6rem + env(safe-area-inset-top, 0px)) !important;
+        }
+
+        /* Hero Parallax Badge Responsive Sizing */
+        .hero-parallax-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            border-radius: 1.5rem;
+            padding: 20px;
+            max-width: 200px;
+            box-sizing: border-box;
+        }
+        @media (max-width: 640px) {
+            .hero-parallax-badge {
+                bottom: 12px !important;
+                right: 12px !important;
+                padding: 12px !important;
+                max-width: 145px !important;
+                border-radius: 1rem !important;
+            }
+            .hero-parallax-badge h4 {
+                font-size: 10px !important;
+            }
+            .hero-parallax-badge p {
+                font-size: 8px !important;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1, h2 {
+                word-break: break-word;
+            }
+        }
+
+        /* Section 3: AI Expertise Section Sizing */
+        .expertise-sec {
+            max-width: 1320px;
+            width: 100%;
+            margin: 50px auto 0 auto;
+            box-sizing: border-box;
+        }
+        @media (max-width: 1024px) {
+            .expertise-sec {
+                margin: 30px auto 0 auto !important;
+            }
+        }
+
+        /* Section 3: AI Expertise Grid and Card Responsive Styling */
+        .expertise-grid-container {
+            min-height: 320px !important;
+        }
+        .expertise-item-card {
+            width: 280px;
+            height: 320px;
+            box-sizing: border-box;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
+        }
+        .expertise-item-card ul {
+            max-height: 200px !important;
+        }
+        @media (max-width: 1280px) {
+            .expertise-item-card {
+                width: 250px;
+                height: 310px;
+            }
+            .expertise-item-card ul {
+                max-height: 180px !important;
+            }
+        }
+        @media (max-width: 1024px) {
+            .expertise-item-card {
+                width: 280px;
+                height: 320px;
+            }
+            .expertise-item-card ul {
+                max-height: 200px !important;
+            }
+        }
+        @media (max-width: 640px) {
+            .expertise-item-card {
+                width: 100% !important;
+                max-width: 320px;
+                height: 320px;
+            }
+        }
+
+        /* Section 4: Professional Journey Responsive Styling */
+        .experience-sec {
+            max-width: 1320px;
+            width: 100%;
+            height: 400px;
+            margin: 120px auto 0 auto;
+            box-sizing: border-box;
+        }
+        .experience-grid {
+            height: 260px;
+        }
+        @media (max-width: 1024px) {
+            .experience-sec {
+                height: auto !important;
+                margin: 60px auto 0 auto !important;
+            }
+            .experience-grid {
+                height: auto !important;
+            }
+            .timeline-details-panel {
+                min-height: 280px !important;
+            }
+            .job-card-details {
+                width: 100% !important;
+                height: 240px !important;
+            }
+        }
+        @media (max-width: 640px) {
+            .timeline-list-container {
+                align-items: center !important;
+                padding-right: 0 !important;
+            }
+            .timeline-item-text {
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .timeline-item-text p {
+                text-align: center !important;
+            }
+            .timeline-list-container .absolute {
+                display: none !important; /* Hide vertical timeline line on mobile to keep clean stacked look */
+            }
+            .timeline-dot {
+                display: none !important; /* Hide dot as well since the line is hidden */
+            }
+            .timeline-details-panel {
+                padding-left: 0 !important;
+                align-items: center !important;
+            }
+            .job-card-details {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+
+        /* Section 5: Core Competencies Responsive Styling */
+        .competencies-sec {
+            max-width: 1320px;
+            width: 100%;
+            height: 420px;
+            margin: 100px auto 90px auto;
+            box-sizing: border-box;
+        }
+        .competencies-grid {
+            width: 624px;
+            height: 584px;
+            max-width: 100%;
+        }
+        .competency-item-card {
+            width: 300px;
+            height: 280px;
+            box-sizing: border-box;
+        }
+
+        /* Auto Hover Animation for Competency Cards */
+        .competency-card.auto-hover {
+            background-color: #0F1053 !important; /* bg-primary */
+            color: white !important;
+        }
+        .competency-card.auto-hover h3 {
+            color: white !important;
+        }
+        .competency-card.auto-hover p {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        .competency-card.auto-hover .outline-num {
+            opacity: 0.2 !important;
+            transform: scale(1.1) !important;
+            -webkit-text-stroke: 1px white !important;
+            color: rgba(255,255,255,0.1) !important;
+        }
+        .competency-card.auto-hover .material-symbols-outlined {
+            transform: scale(1.1) rotate(12deg) !important;
+        }
+        @media (max-width: 1024px) {
+            .competencies-sec {
+                height: auto !important;
+                margin: 60px auto 60px auto !important;
+            }
+            .competencies-grid {
+                width: 100% !important;
+                height: auto !important;
+            }
+            .competency-item-card {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 200px !important;
+            }
+        }
+
+        /* Section 6: Certifications & Tech Stack Responsive Styling */
+        .skills-sec {
+            max-width: 1320px;
+            width: 100%;
+            height: auto;
+            margin: 15px auto 0 auto;
+            box-sizing: border-box;
+            padding-bottom: 40px;
+        }
+        @media (max-width: 1024px) {
+            .skills-sec {
+                margin: 30px auto 0 auto !important;
+            }
+        }
+        .skills-grid {
+            height: 260px;
+        }
+        .skill-item-card {
+            width: 410px;
+            max-width: 100%;
+            height: 260px;
+            box-sizing: border-box;
+        }
+        .cert-item-card {
+            width: 410px;
+            max-width: 100%;
+            height: 140px;
+            box-sizing: border-box;
+        }
+        @media (max-width: 1024px) {
+            .skills-grid {
+                height: auto !important;
+            }
+            .skill-item-card {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 200px !important;
+            }
+            .cert-item-card {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 130px !important;
+            }
+        }
+
+        /* Footer Responsive Styling */
+        .footer-sec {
+            max-width: 1320px;
+            width: 100%;
+            height: 360px;
+            margin: 60px auto 0 auto;
+            padding: 40px 40px 20px 40px;
+            box-sizing: border-box;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer-col-300 {
+            width: 300px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .footer-col-200 {
+            width: 200px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 1024px) {
+            .footer-sec {
+                height: auto !important;
+                margin: 30px auto 0 auto !important;
+                padding: 40px 24px 20px 24px !important;
+                border-radius: 24px 24px 0 0 !important;
+            }
+            .footer-col-300, .footer-col-200 {
+                width: 100% !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
+    <nav x-data="{ mobileMenuOpen: false }" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/10">
         <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
             <a href="#" class="flex items-center gap-3 group cursor-pointer">
                 <span class="font-headline text-lg font-black bg-primary text-white px-2.5 py-0.5 rounded-[6px] tracking-tighter group-hover:scale-105 transition-transform">IKR</span>
                 <span class="font-headline text-2xl font-bold tracking-tight text-primary">IMRAN KHAN</span>
             </a>
-            <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center gap-6">
                 <a href="#contact" class="px-6 py-2 rounded-full border border-primary/20 hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm">Let's Connect</a>
                 <div class="flex items-center gap-4 text-primary">
                     <a href="tel:+919715620426" class="hover:text-primary/60 transition-colors"><span class="material-symbols-outlined cursor-pointer">call</span></a>
                     <a href="mailto:111imrankhan111@gmail.com" class="hover:text-primary/60 transition-colors"><span class="material-symbols-outlined cursor-pointer">mail</span></a>
+                </div>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <div class="flex md:hidden items-center gap-3">
+                <a href="tel:+919715620426" class="hover:text-primary/60 transition-colors flex items-center justify-center w-10 h-10 rounded-full bg-primary/5 text-primary"><span class="material-symbols-outlined text-lg">call</span></a>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-primary hover:text-primary/60 focus:outline-none transition-colors w-10 h-10 flex items-center justify-center rounded-full bg-primary/5" aria-label="Toggle Menu">
+                    <span class="material-symbols-outlined" x-text="mobileMenuOpen ? 'close' : 'menu'">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div x-show="mobileMenuOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="-translate-y-full opacity-0"
+             x-transition:enter-end="translate-y-0 opacity-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="translate-y-0 opacity-100"
+             x-transition:leave-end="-translate-y-full opacity-0"
+             class="md:hidden absolute top-full left-0 w-full bg-white border-b border-outline-variant/10 shadow-lg px-margin-mobile py-6 flex flex-col gap-6"
+             style="display: none;">
+            <div class="flex flex-col gap-4">
+                <a href="#achievements" @click="mobileMenuOpen = false" class="font-headline text-base font-bold text-primary hover:text-primary/70 py-2 border-b border-primary/5">Achievements</a>
+                <a href="#expertise" @click="mobileMenuOpen = false" class="font-headline text-base font-bold text-primary hover:text-primary/70 py-2 border-b border-primary/5">Expertise</a>
+                <a href="#experience" @click="mobileMenuOpen = false" class="font-headline text-base font-bold text-primary hover:text-primary/70 py-2 border-b border-primary/5">Experience</a>
+                <a href="#competencies" @click="mobileMenuOpen = false" class="font-headline text-base font-bold text-primary hover:text-primary/70 py-2 border-b border-primary/5">Competencies</a>
+                <a href="#skills" @click="mobileMenuOpen = false" class="font-headline text-base font-bold text-primary hover:text-primary/70 py-2 border-b border-primary/5">Certifications</a>
+            </div>
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="#contact" @click="mobileMenuOpen = false" class="px-6 py-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-all duration-300 font-bold text-sm text-center">Let's Connect</a>
+                <div class="flex justify-center gap-6 text-primary mt-2">
+                    <a href="tel:+919715620426" class="hover:text-primary/60 transition-colors flex items-center gap-2 font-medium text-sm"><span class="material-symbols-outlined text-lg">call</span> Call</a>
+                    <a href="mailto:111imrankhan111@gmail.com" class="hover:text-primary/60 transition-colors flex items-center gap-2 font-medium text-sm"><span class="material-symbols-outlined text-lg">mail</span> Email</a>
                 </div>
             </div>
         </div>
@@ -382,7 +696,7 @@
                         style="object-position: center top;"
                     />
                     <!-- Floating badge -->
-                    <div class="glass-card hover:-translate-y-1 transition-all duration-300 shadow-lg absolute bottom-6 right-6 rounded-[1.5rem] p-5 max-w-[200px] hero-parallax-badge z-20">
+                    <div class="glass-card hover:-translate-y-1 transition-all duration-300 shadow-lg hero-parallax-badge z-20">
                         <p class="text-[9px] font-bold tracking-widest text-primary uppercase opacity-40 m-0 mb-1">MY APPROACH</p>
                         <h4 class="font-headline font-bold text-primary uppercase text-xs leading-snug m-0 mb-2">DATA-DRIVEN DECISIONS</h4>
                         <a href="#expertise" class="flex items-center gap-1 group/link hover:opacity-60 transition-opacity text-[9px] font-bold tracking-wider text-primary uppercase decoration-none">
@@ -399,7 +713,7 @@
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity scroll-down-indicator cursor-pointer z-20" onclick="document.getElementById('achievements').scrollIntoView({behavior: 'smooth'})">
+            <div class="hidden sm:flex absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity scroll-down-indicator cursor-pointer z-20" onclick="document.getElementById('achievements').scrollIntoView({behavior: 'smooth'})">
                 <span class="text-[9px] font-bold tracking-widest uppercase text-primary">Scroll Down</span>
                 <div class="w-[18px] h-[30px] border-2 border-primary rounded-full relative flex justify-center">
                     <div class="w-1 h-2 bg-primary rounded-full absolute top-1.5 scroll-wheel-dot"></div>
@@ -413,7 +727,7 @@
             Specs: width 1320px, height 450px, top-gap 100px
             3-col: left stats 220px, center image 520px, right text 420px, gap 24px
         -->
-        <section class="reveal-section max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop my-24 py-8 overflow-hidden" id="achievements">
+        <section class="reveal-section max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 mb-24 py-6 overflow-hidden" id="achievements">
             <!-- Header -->
             <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center mb-12">
                 <h2 class="font-headline font-bold text-primary uppercase text-3xl sm:text-4xl lg:text-5xl leading-none m-0">
@@ -463,12 +777,7 @@
         </section>
 
         <!-- AI Expertise -->
-        <section class="bg-white reveal-section relative overflow-hidden" id="expertise" style="
-            max-w: 1320px;
-            width: 100%;
-            margin: 100px auto 0 auto;
-            box-sizing: border-box;
-        ">
+        <section class="bg-white reveal-section relative overflow-hidden expertise-sec" id="expertise">
             <!-- Background mesh bubbles for glassmorphism backdrop -->
             <div class="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-light-blue/15 blur-[90px] pointer-events-none hero-gradient-bubble"></div>
             <div class="absolute bottom-10 -right-10 w-96 h-96 rounded-full bg-pale-blue/45 blur-[100px] pointer-events-none hero-gradient-bubble"></div>
@@ -484,9 +793,9 @@
                     </a>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] justify-items-center perspective-container" style="min-height: 270px;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] justify-items-center perspective-container expertise-grid-container">
                     <!-- Card 1: Sales Intelligence -->
-                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0" style="width: 240px; height: 270px;">
+                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0 expertise-item-card">
                         <div class="flip-card-inner w-full h-full" :class="flipped ? 'is-flipped' : ''" @mouseenter="flipped = true" @mouseleave="flipped = false">
                             <!-- Front -->
                             <div class="flip-card-front bg-light-blue/30 backdrop-blur-xl border border-light-blue/40 p-4 rounded-3xl flex flex-col justify-between group glow-border-card w-full h-full" 
@@ -523,7 +832,7 @@
                     </div>
 
                     <!-- Card 2: Data Analyst Agent -->
-                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0" style="width: 240px; height: 270px;">
+                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0 expertise-item-card">
                         <div class="flip-card-inner w-full h-full" :class="flipped ? 'is-flipped' : ''" @mouseenter="flipped = true" @mouseleave="flipped = false">
                             <!-- Front -->
                             <div class="flip-card-front bg-light-blue/30 backdrop-blur-xl border border-light-blue/40 p-4 rounded-3xl flex flex-col justify-between group glow-border-card w-full h-full" 
@@ -558,7 +867,7 @@
                     </div>
 
                     <!-- Card 3: Recruitment -->
-                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0" style="width: 240px; height: 270px;">
+                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0 expertise-item-card">
                         <div class="flip-card-inner w-full h-full" :class="flipped ? 'is-flipped' : ''" @mouseenter="flipped = true" @mouseleave="flipped = false">
                             <!-- Front -->
                             <div class="flip-card-front bg-light-blue/30 backdrop-blur-xl border border-light-blue/40 p-4 rounded-3xl flex flex-col justify-between glow-border-card group w-full h-full" 
@@ -593,7 +902,7 @@
                     </div>
 
                     <!-- Card 4: Customer Engagement -->
-                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0" style="width: 240px; height: 270px;">
+                    <div x-data="{ flipped: false }" class="relative expertise-card transform translate-y-8 opacity-0 expertise-item-card">
                         <div class="flip-card-inner w-full h-full" :class="flipped ? 'is-flipped' : ''" @mouseenter="flipped = true" @mouseleave="flipped = false">
                             <!-- Front -->
                             <div class="flip-card-front bg-light-blue/30 backdrop-blur-xl border border-light-blue/40 p-4 rounded-3xl flex flex-col justify-between glow-border-card group w-full h-full" 
@@ -630,10 +939,9 @@
         </section>
 
         <!-- Professional Experience (Interactive GSAP + Alpine) -->
-        <section class="bg-white overflow-visible relative" id="experience" 
+        <section class="bg-white overflow-visible relative experience-sec" id="experience" 
             x-data="{ activeJob: 'aqualite' }"
-            @scroll-job.window="activeJob = $event.detail"
-            style="max-w: 1320px; width: 100%; height: 400px; margin: 120px auto 0 auto; box-sizing: border-box;">
+            @scroll-job.window="activeJob = $event.detail">
             
             <!-- This container will be pinned by GSAP ScrollTrigger -->
             <div id="experience-pinned-container" class="px-margin-mobile md:px-margin-desktop w-full reveal-section">
@@ -651,7 +959,7 @@
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-start" style="height: 260px;">
+                <div class="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-start experience-grid">
                     <!-- Left Timeline (45%): Align right -->
                     <div class="w-full flex flex-col items-end text-right relative">
                         <p class="text-[10px] font-bold tracking-widest text-primary/30 uppercase mb-6 w-full text-right pr-2">TIMELINE</p>
@@ -852,7 +1160,7 @@
         </section>
 
         <!-- Core Competencies -->
-        <section class="bg-white reveal-section overflow-visible relative" id="competencies" style="max-w: 1320px; width: 100%; height: 420px; margin: 100px auto 200px auto; box-sizing: border-box;">
+        <section class="bg-white reveal-section overflow-visible relative competencies-sec" id="competencies">
             <!-- Background gradient bubbles -->
             <div class="absolute top-10 left-10 w-72 h-72 rounded-full bg-light-blue/20 blur-[100px] pointer-events-none hero-gradient-bubble" style="animation-duration: 16s; animation-delay: -3s;"></div>
             <div class="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-pale-blue/60 blur-[120px] pointer-events-none hero-gradient-bubble" style="animation-duration: 18s; animation-delay: -5s;"></div>
@@ -864,8 +1172,8 @@
                         <h2 class="font-headline text-4xl font-bold text-primary m-0">Core<br/>Competencies</h2>
                     </div>
                     <!-- Right: Grid 2x2 -->
-                    <div class="grid grid-cols-2 gap-[24px]" style="width: 624px; height: 584px; max-width: 100%;">
-                        <div class="bg-pale-blue p-8 rounded-3xl relative overflow-hidden competency-card hover-card hover:bg-primary transition-colors duration-500 cursor-default group" style="width: 300px; height: 280px; box-sizing: border-box;">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-[24px] competencies-grid">
+                        <div class="bg-pale-blue p-8 rounded-3xl relative overflow-hidden competency-card hover-card hover:bg-primary transition-colors duration-500 cursor-default group competency-item-card">
                             <span class="outline-num text-9xl absolute -bottom-8 -right-4 font-bold opacity-10">01</span>
                             <h3 class="font-headline text-xl font-bold mb-4 group-hover:text-white transition-colors duration-500 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">trending_up</span>
@@ -873,7 +1181,7 @@
                             </h3>
                             <p class="text-xs text-primary/60 max-w-[240px] group-hover:text-white/80 transition-colors duration-500">Territory development, sales forecasting, revenue planning, and market expansion strategies.</p>
                         </div>
-                        <div class="bg-pale-blue p-8 rounded-3xl relative overflow-hidden competency-card hover-card hover:bg-primary transition-colors duration-500 cursor-default group" style="width: 300px; height: 280px; box-sizing: border-box;">
+                        <div class="bg-pale-blue p-8 rounded-3xl relative overflow-hidden competency-card hover-card hover:bg-primary transition-colors duration-500 cursor-default group competency-item-card">
                             <span class="outline-num text-9xl absolute -bottom-8 -right-4 font-bold opacity-10">02</span>
                             <h3 class="font-headline text-xl font-bold mb-4 group-hover:text-white transition-colors duration-500 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">storefront</span>
@@ -881,7 +1189,7 @@
                             </h3>
                             <p class="text-xs text-primary/60 max-w-[240px] group-hover:text-white/80 transition-colors duration-500">Store performance management, KPI monitoring, inventory optimization, and compliance.</p>
                         </div>
-                        <div class="bg-pale-blue p-8 rounded-3xl relative overflow-hidden competency-card hover-card hover:bg-primary transition-colors duration-500 cursor-default group" style="width: 300px; height: 280px; box-sizing: border-box;">
+                        <div class="bg-pale-blue p-8 rounded-3xl relative overflow-hidden competency-card hover-card hover:bg-primary transition-colors duration-500 cursor-default group competency-item-card">
                             <span class="outline-num text-9xl absolute -bottom-8 -right-4 font-bold opacity-10">03</span>
                             <h3 class="font-headline text-xl font-bold mb-4 group-hover:text-white transition-colors duration-500 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">groups</span>
@@ -889,7 +1197,7 @@
                             </h3>
                             <p class="text-xs text-primary/60 max-w-[240px] group-hover:text-white/80 transition-colors duration-500">Recruitment, team leadership, sales coaching, performance evaluation, and succession planning.</p>
                         </div>
-                        <div class="bg-primary p-8 rounded-3xl relative overflow-hidden text-white competency-card hover-card hover:bg-primary/90 transition-colors duration-300 cursor-default group" style="width: 300px; height: 280px; box-sizing: border-box;">
+                        <div class="bg-primary p-8 rounded-3xl relative overflow-hidden text-white competency-card hover-card hover:bg-primary/90 transition-colors duration-300 cursor-default group competency-item-card">
                             <span class="outline-num text-9xl absolute -bottom-8 -right-4 font-bold opacity-20" style="-webkit-text-stroke: 1px white;">04</span>
                             <h3 class="font-headline text-xl font-bold mb-4 flex items-center gap-2">
                                 <span class="material-symbols-outlined text-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">terminal</span>
@@ -903,14 +1211,14 @@
         </section>
 
         <!-- Mid Banner Quote -->
-        <section class="py-32 text-center max-w-4xl mx-auto px-4 group reveal-section">
+        <section class="pt-32 pb-12 text-center max-w-4xl mx-auto px-4 group reveal-section">
             <h2 class="font-headline text-3xl md:text-5xl font-bold text-primary uppercase leading-[1.1] transition-transform duration-500 group-hover:scale-105">
                 DELIVERING <span class="font-light text-light-blue transition-colors duration-500">MEASURABLE</span> RESULTS THROUGH <span class="font-light text-light-blue transition-colors duration-500 delay-100">STRATEGY</span>, EXECUTION, AND <span class="font-light text-light-blue transition-colors duration-500 delay-200">INNOVATION</span>.
             </h2>
         </section>
 
         <!-- Certifications & Tech Stack -->
-        <section class="reveal-section overflow-visible" id="skills" 
+        <section class="reveal-section overflow-visible skills-sec" id="skills" 
             x-data="{ 
                 selectedCert: null,
                 certificates: [
@@ -939,8 +1247,7 @@
                         desc: 'Official certification verifying core administration skills for marketing automations, customer lifecycle mapping, and pipeline config.'
                     }
                 ]
-            }"
-            style="max-w: 1320px; width: 100%; height: auto; margin: 120px auto 0 auto; box-sizing: border-box; padding-bottom: 40px;">
+            }">
             <div class="px-margin-mobile md:px-margin-desktop">
                 <div class="flex justify-between items-end mb-8">
                     <div>
@@ -949,9 +1256,9 @@
                     </div>
                     <p class="text-[10px] font-bold tracking-widest text-primary/30 uppercase">SKILLSET</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-[40px] justify-items-center" style="height: 260px;">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-[40px] justify-items-center skills-grid">
                     <!-- Card 1: Business & Analytics -->
-                    <div class="bg-pale-blue rounded-[40px] p-8 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" style="width: 410px; max-width: 100%; height: 260px; box-sizing: border-box;">
+                    <div class="bg-pale-blue rounded-[40px] p-8 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group skill-item-card">
                         <div class="flex justify-between items-start">
                             <span class="font-headline text-3xl font-bold opacity-10 group-hover:text-primary group-hover:opacity-20 transition-colors duration-500">SKILLS</span>
                         </div>
@@ -965,7 +1272,7 @@
                         </div>
                     </div>
                     <!-- Card 2: CRM & AI Tools -->
-                    <div class="bg-pale-blue rounded-[40px] p-8 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" style="width: 410px; max-width: 100%; height: 260px; box-sizing: border-box;">
+                    <div class="bg-pale-blue rounded-[40px] p-8 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group skill-item-card">
                         <div class="flex justify-between items-start">
                             <span class="font-headline text-3xl font-bold opacity-10 group-hover:text-primary group-hover:opacity-20 transition-colors duration-500">AI TOOLS</span>
                         </div>
@@ -978,7 +1285,7 @@
                         </div>
                     </div>
                     <!-- Card 3: Languages -->
-                    <div class="bg-pale-blue rounded-[40px] p-8 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group" style="width: 410px; max-width: 100%; height: 260px; box-sizing: border-box;">
+                    <div class="bg-pale-blue rounded-[40px] p-8 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group skill-item-card">
                         <div class="flex justify-between items-start">
                             <span class="font-headline text-3xl font-bold opacity-10 group-hover:text-primary group-hover:opacity-20 transition-colors duration-500">LANGUAGES</span>
                         </div>
@@ -997,9 +1304,9 @@
                     <p class="text-[10px] font-bold tracking-widest text-primary/30 uppercase mb-6 text-center md:text-left">OFFICIAL CERTIFICATIONS (Click to preview details)</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-[40px] justify-items-center">
                         <template x-for="cert in certificates">
-                            <div @click="selectedCert = cert" 
-                                 class="shine-card bg-pale-blue rounded-3xl p-6 w-[410px] max-w-full h-[140px] flex flex-col justify-between cursor-pointer border border-primary/5 hover:border-light-blue transition-all duration-300 certificate-card opacity-0 transform translate-y-8"
-                                 style="box-sizing: border-box;">
+                                <div @click="selectedCert = cert" 
+                                     class="shine-card bg-pale-blue rounded-3xl p-6 flex flex-col justify-between cursor-pointer border border-primary/5 hover:border-light-blue transition-all duration-300 certificate-card opacity-0 transform translate-y-8 cert-item-card"
+                                     style="box-sizing: border-box;">
                                 <div>
                                     <h4 class="text-xs font-bold text-primary" x-text="cert.title"></h4>
                                     <p class="text-[10px] text-primary/50 mt-1" x-text="cert.issuer"></p>
@@ -1054,7 +1361,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bg-primary text-white relative" id="contact" style="max-w: 1320px; width: 100%; height: 360px; margin: 120px auto 0 auto; padding: 40px 40px 20px 40px; box-sizing: border-box; border-radius: 40px 40px 0 0;">
+        <footer class="bg-primary text-white relative footer-sec" id="contact">
             <!-- Floating Background Particles -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-25">
                 <div class="absolute w-2 h-2 bg-white rounded-full float-particle" style="top: 20%; left: 10%; animation-duration: 8s;"></div>
@@ -1066,17 +1373,17 @@
 
             <div class="flex flex-col justify-between h-full w-full relative z-10">
                 <!-- Top Content Grid -->
-                <div class="flex flex-row justify-between items-start w-full">
-                    <div class="flex flex-row gap-12 items-start">
+                <div class="flex flex-col lg:flex-row justify-between items-stretch lg:items-start w-full gap-8">
+                    <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start w-full">
                         <!-- About (300px) -->
-                        <div style="width: 300px; box-sizing: border-box;" class="footer-fade-item">
+                        <div class="footer-fade-item footer-col-300">
                             <p class="text-[10px] font-bold tracking-widest uppercase opacity-40 mb-3">About</p>
                             <p class="text-sm font-semibold mb-1 text-light-blue">Available for Opportunities</p>
                             <p class="text-[10px] opacity-50 leading-relaxed uppercase tracking-wider">Focusing on delivering measurable business results through sales execution & AI solutions.</p>
                         </div>
                         
                         <!-- Contact (300px) -->
-                        <div style="width: 300px; box-sizing: border-box;" class="footer-fade-item">
+                        <div class="footer-fade-item footer-col-300">
                             <p class="text-[10px] font-bold tracking-widest uppercase opacity-40 mb-3">Contact</p>
                             <div class="text-[11px] opacity-60 leading-relaxed uppercase tracking-wider space-y-1">
                                 <p class="m-0">Madurai, Tamil Nadu, India</p>
@@ -1086,7 +1393,7 @@
                         </div>
  
                         <!-- Social (200px) -->
-                        <div style="width: 200px; box-sizing: border-box;" class="footer-fade-item">
+                        <div class="footer-fade-item footer-col-200">
                             <p class="text-[10px] font-bold tracking-widest uppercase opacity-40 mb-3">Socials</p>
                             <div class="flex gap-3">
                                 <a href="tel:+919715620426" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary hover:-translate-y-2 hover:scale-115 hover:shadow-2xl transition-all duration-300">
@@ -1103,7 +1410,7 @@
                     </div>
  
                     <!-- Logo Area (Remaining) -->
-                    <div class="flex flex-col items-end text-right footer-fade-item">
+                    <div class="flex flex-col items-start lg:items-end text-left lg:text-right footer-fade-item mt-4 lg:mt-0">
                         <span class="font-headline text-3xl font-extrabold bg-white text-primary px-3.5 py-1 rounded-[10px] tracking-tighter inline-block select-none">IKR</span>
                         <p class="text-[10.5px] font-bold tracking-widest uppercase opacity-55 mt-2">Sales Professional</p>
                         <p class="text-[9px] opacity-30 uppercase tracking-widest mt-4">© 2026 Imran Khan. All rights reserved.</p>
@@ -1490,6 +1797,47 @@
                     }
                 });
             });
+
+            // Auto Hover Cycle for Core Competencies Cards
+            const competencyCards = document.querySelectorAll(".competency-card");
+            let compIndex = 0;
+            let compInterval = null;
+            let isUserHoveringComp = false;
+
+            function startCompAutoHover() {
+                if (compInterval) clearInterval(compInterval);
+                compInterval = setInterval(() => {
+                    if (isUserHoveringComp) return;
+                    
+                    competencyCards.forEach(card => card.classList.remove("auto-hover"));
+                    
+                    // Add auto-hover style class to the active card
+                    competencyCards[compIndex].classList.add("auto-hover");
+                    
+                    // Advance to next index
+                    compIndex = (compIndex + 1) % competencyCards.length;
+                }, 2500);
+            }
+
+            function stopCompAutoHover() {
+                clearInterval(compInterval);
+                competencyCards.forEach(card => card.classList.remove("auto-hover"));
+            }
+
+            const compGrid = document.querySelector(".competencies-grid");
+            if (compGrid) {
+                compGrid.addEventListener("mouseenter", () => {
+                    isUserHoveringComp = true;
+                    stopCompAutoHover();
+                });
+                compGrid.addEventListener("mouseleave", () => {
+                    isUserHoveringComp = false;
+                    startCompAutoHover();
+                });
+            }
+
+            // Start auto-hover cycle initially
+            startCompAutoHover();
         });
     </script>
 </body>
