@@ -1024,7 +1024,6 @@
                                      :class="activeJob === 'fenner' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">J.K Fenner</p>
                                 <p class="text-[10px] font-bold text-primary/20 transition-all duration-300 text-right mt-1"
                                      :class="activeJob === 'fenner' ? 'text-primary/50 text-[11px]' : ''">2018</p>
-                            </div>ext-primary/50 text-[11px]' : ''">2018</p>
                             </div>
 
                         </div>
