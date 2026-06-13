@@ -969,7 +969,10 @@
                             <!-- Background timeline track -->
                             <div class="absolute -right-[1px] top-2 bottom-2 w-[2px] bg-primary/10"></div>
                             <!-- Drawing line that fills as you scroll -->
-                            <div class="absolute -right-[1px] top-2 bottom-2 w-[2px] bg-primary origin-top timeline-line-draw" style="height: 0%;"></div                            <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="aqualite" 
+                            <div class="absolute -right-[1px] top-2 bottom-2 w-[2px] bg-primary origin-top timeline-line-draw" style="height: 0%;"></div>
+                            
+                            <!-- Aqualite -->
+                            <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="aqualite" 
                                   @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'aqualite'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.4, ease: 'power2.out'});">
                                 <div class="absolute w-4 h-4 bg-white border-2 rounded-full -right-[41px] top-1.5 transition-all duration-300 timeline-dot opacity-0"
                                      :class="activeJob === 'aqualite' ? 'border-primary bg-primary scale-125' : 'border-primary/20 group-hover:scale-125 group-hover:border-primary'"></div>
