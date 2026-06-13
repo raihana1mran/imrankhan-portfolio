@@ -1043,7 +1043,7 @@
                              x-transition:leave-end="transition-3d-leave-to"
                              class="absolute top-8 left-0 w-full" style="z-index: 10;">
                             <div class="bg-pale-blue rounded-3xl p-4 hover-tilt-3d flex flex-col justify-between ml-0 mr-auto job-card-details" style="width: 280px; max-width: 100%; height: 240px; box-sizing: border-box;">
-                                <div class="overflow-y-auto pr-1" style="max-height: 180px;">
+                                <div class="overflow-y-auto pr-1" data-lenis-prevent style="max-height: 180px;">
                                     <h3 class="text-sm font-bold text-primary mb-2">Sales Executive</h3>
                                     <ul class="space-y-1.5 text-[11px] text-primary/70 font-medium">
                                         <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[12px] text-primary/40 mt-0.5">check_circle</span> Achieve monthly and annual sales targets.</li>
@@ -1073,7 +1073,7 @@
                              class="absolute top-8 left-0 w-full"
                              style="display: none; z-index: 10;">
                             <div class="bg-pale-blue rounded-3xl p-4 hover-tilt-3d flex flex-col justify-between ml-0 mr-auto job-card-details" style="width: 280px; max-width: 100%; height: 240px; box-sizing: border-box;">
-                                <div>
+                                <div class="overflow-y-auto pr-1" data-lenis-prevent style="max-height: 180px;">
                                     <h3 class="text-sm font-bold text-primary mb-2">Sales Executive</h3>
                                     <ul class="space-y-1.5 text-[11px] text-primary/70 font-medium">
                                         <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[12px] text-primary/40 mt-0.5">check_circle</span> Leading market expansion and territory growth.</li>
@@ -1096,7 +1096,7 @@
                              class="absolute top-8 left-0 w-full"
                              style="display: none; z-index: 10;">
                             <div class="bg-pale-blue rounded-3xl p-4 hover-tilt-3d flex flex-col justify-between ml-0 mr-auto job-card-details" style="width: 280px; max-width: 100%; height: 240px; box-sizing: border-box;">
-                                <div>
+                                <div class="overflow-y-auto pr-1" data-lenis-prevent style="max-height: 180px;">
                                     <h3 class="text-sm font-bold text-primary mb-2">Sales Executive</h3>
                                     <ul class="space-y-1.5 text-[11px] text-primary/70 font-medium">
                                         <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[12px] text-primary/40 mt-0.5">check_circle</span> Exceeded sales targets consistently across all quarters.</li>
@@ -1119,7 +1119,7 @@
                              class="absolute top-8 left-0 w-full"
                              style="display: none; z-index: 10;">
                             <div class="bg-pale-blue rounded-3xl p-4 hover-tilt-3d flex flex-col justify-between ml-0 mr-auto job-card-details" style="width: 280px; max-width: 100%; height: 240px; box-sizing: border-box;">
-                                <div>
+                                <div class="overflow-y-auto pr-1" data-lenis-prevent style="max-height: 180px;">
                                     <h3 class="text-sm font-bold text-primary mb-2">Warehouse & Sales Coordinator</h3>
                                     <ul class="space-y-1.5 text-[11px] text-primary/70 font-medium">
                                         <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[12px] text-primary/40 mt-0.5">check_circle</span> Oversaw inventory management, receiving, and dispatch.</li>
@@ -1142,7 +1142,7 @@
                              class="absolute top-8 left-0 w-full"
                              style="display: none; z-index: 10;">
                             <div class="bg-pale-blue rounded-3xl p-4 hover-tilt-3d flex flex-col justify-between ml-0 mr-auto job-card-details" style="width: 280px; max-width: 100%; height: 240px; box-sizing: border-box;">
-                                <div>
+                                <div class="overflow-y-auto pr-1" data-lenis-prevent style="max-height: 180px;">
                                     <h3 class="text-sm font-bold text-primary mb-2">Quality Controller</h3>
                                     <ul class="space-y-1.5 text-[11px] text-primary/70 font-medium">
                                         <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[12px] text-primary/40 mt-0.5">check_circle</span> Performed quality inspection of mechanical components and finished goods.</li>
