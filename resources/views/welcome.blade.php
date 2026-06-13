@@ -83,7 +83,7 @@
 
         /* 3D Tilt Reveal Animation for timeline cards via Alpine.js transitions */
         .transition-3d-enter-active {
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 20;
         }
         .transition-3d-enter-from {
@@ -95,7 +95,7 @@
             transform: translateY(0) scale(1);
         }
         .transition-3d-leave-active {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 10;
         }
         .transition-3d-leave-from {
@@ -108,7 +108,7 @@
         }
         /* Alternating 3D Tilt Reveal Animation for even timeline cards */
         .transition-3d-even-enter-active {
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 20;
         }
         .transition-3d-even-enter-from {
@@ -120,7 +120,7 @@
             transform: translateY(0) scale(1);
         }
         .transition-3d-even-leave-active {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 10;
         }
         .transition-3d-even-leave-from {
@@ -969,61 +969,59 @@
                             <!-- Background timeline track -->
                             <div class="absolute -right-[1px] top-2 bottom-2 w-[2px] bg-primary/10"></div>
                             <!-- Drawing line that fills as you scroll -->
-                            <div class="absolute -right-[1px] top-2 bottom-2 w-[2px] bg-primary origin-top timeline-line-draw" style="height: 0%;"></div>
-                            
-                            <!-- Aqualite -->
-                            <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="aqualite" 
-                                 @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'aqualite'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.4, ease: 'power2.out'});">
+                            <div class="absolute -right-[1px] top-2 bottom-2 w-[2px] bg-primary origin-top timeline-line-draw" style="height: 0%;"></div                            <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="aqualite" 
+                                  @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'aqualite'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.8, ease: 'power3.out'});">
                                 <div class="absolute w-4 h-4 bg-white border-2 rounded-full -right-[41px] top-1.5 transition-all duration-300 timeline-dot opacity-0"
                                      :class="activeJob === 'aqualite' ? 'border-primary bg-primary scale-125' : 'border-primary/20 group-hover:scale-125 group-hover:border-primary'"></div>
                                 <p class="font-headline font-bold transition-all duration-300 text-right m-0"
-                                   :class="activeJob === 'aqualite' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">Aqualite</p>
+                                     :class="activeJob === 'aqualite' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">Aqualite</p>
                                 <p class="text-[10px] font-bold text-primary/20 transition-all duration-300 text-right mt-1"
-                                   :class="activeJob === 'aqualite' ? 'text-primary/50 text-[11px]' : ''">2026 - Present</p>
+                                     :class="activeJob === 'aqualite' ? 'text-primary/50 text-[11px]' : ''">2026 - Present</p>
                             </div>
 
                             <!-- Campus Activewear -->
                             <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="campus" 
-                                 @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'campus'})); gsap.fromTo('.job-card-details', {opacity: 0, x: -20}, {opacity: 1, x: 0, duration: 0.4, ease: 'power2.out'});">
+                                  @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'campus'})); gsap.fromTo('.job-card-details', {opacity: 0, x: -20}, {opacity: 1, x: 0, duration: 0.8, ease: 'power3.out'});">
                                 <div class="absolute w-4 h-4 bg-white border-2 rounded-full -right-[41px] top-1.5 transition-all duration-300 timeline-dot opacity-0"
                                      :class="activeJob === 'campus' ? 'border-primary bg-primary scale-125' : 'border-primary/20 group-hover:scale-125 group-hover:border-primary'"></div>
                                 <p class="font-headline font-bold transition-all duration-300 text-right m-0"
-                                   :class="activeJob === 'campus' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">Campus Activewear</p>
+                                     :class="activeJob === 'campus' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">Campus Activewear</p>
                                 <p class="text-[10px] font-bold text-primary/20 transition-all duration-300 text-right mt-1"
-                                   :class="activeJob === 'campus' ? 'text-primary/50 text-[11px]' : ''">2025 - 2026</p>
+                                     :class="activeJob === 'campus' ? 'text-primary/50 text-[11px]' : ''">2025 - 2026</p>
                             </div>
 
                             <!-- Jeeth Enterprises -->
                             <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="jeeth" 
-                                 @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'jeeth'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.4, ease: 'power2.out'});">
+                                  @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'jeeth'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.8, ease: 'power3.out'});">
                                 <div class="absolute w-4 h-4 bg-white border-2 rounded-full -right-[41px] top-1.5 transition-all duration-300 timeline-dot opacity-0"
                                      :class="activeJob === 'jeeth' ? 'border-primary bg-primary scale-125' : 'border-primary/20 group-hover:scale-125 group-hover:border-primary'"></div>
                                 <p class="font-headline font-bold transition-all duration-300 text-right m-0"
-                                   :class="activeJob === 'jeeth' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">Jeeth Enterprises</p>
+                                     :class="activeJob === 'jeeth' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">Jeeth Enterprises</p>
                                 <p class="text-[10px] font-bold text-primary/20 transition-all duration-300 text-right mt-1"
-                                   :class="activeJob === 'jeeth' ? 'text-primary/50 text-[11px]' : ''">2023 - 2025</p>
+                                     :class="activeJob === 'jeeth' ? 'text-primary/50 text-[11px]' : ''">2023 - 2025</p>
                             </div>
 
                             <!-- FashionWalks -->
                             <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="fashion" 
-                                 @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'fashion'})); gsap.fromTo('.job-card-details', {opacity: 0, x: -20}, {opacity: 1, x: 0, duration: 0.4, ease: 'power2.out'});">
+                                  @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'fashion'})); gsap.fromTo('.job-card-details', {opacity: 0, x: -20}, {opacity: 1, x: 0, duration: 0.8, ease: 'power3.out'});">
                                 <div class="absolute w-4 h-4 bg-white border-2 rounded-full -right-[41px] top-1.5 transition-all duration-300 timeline-dot opacity-0"
                                      :class="activeJob === 'fashion' ? 'border-primary bg-primary scale-125' : 'border-primary/20 group-hover:scale-125 group-hover:border-primary'"></div>
                                 <p class="font-headline font-bold transition-all duration-300 text-right m-0"
-                                   :class="activeJob === 'fashion' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">FashionWalks</p>
+                                     :class="activeJob === 'fashion' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">FashionWalks</p>
                                 <p class="text-[10px] font-bold text-primary/20 transition-all duration-300 text-right mt-1"
-                                   :class="activeJob === 'fashion' ? 'text-primary/50 text-[11px]' : ''">2020 - 2023</p>
+                                     :class="activeJob === 'fashion' ? 'text-primary/50 text-[11px]' : ''">2020 - 2023</p>
                             </div>
 
                             <!-- J.K Fenner -->
                             <div class="relative group cursor-pointer w-full flex flex-col items-end timeline-item-text opacity-0" data-job="fenner" 
-                                 @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'fenner'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.4, ease: 'power2.out'});">
+                                  @click="window.dispatchEvent(new CustomEvent('scroll-job', {detail: 'fenner'})); gsap.fromTo('.job-card-details', {opacity: 0, x: 20}, {opacity: 1, x: 0, duration: 0.8, ease: 'power3.out'});">
                                 <div class="absolute w-4 h-4 bg-white border-2 rounded-full -right-[41px] top-1.5 transition-all duration-300 timeline-dot opacity-0"
                                      :class="activeJob === 'fenner' ? 'border-primary bg-primary scale-125' : 'border-primary/20 group-hover:scale-125 group-hover:border-primary'"></div>
                                 <p class="font-headline font-bold transition-all duration-300 text-right m-0"
-                                   :class="activeJob === 'fenner' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">J.K Fenner</p>
+                                     :class="activeJob === 'fenner' ? 'text-2xl text-primary leading-tight' : 'text-sm text-primary/40 group-hover:text-primary'">J.K Fenner</p>
                                 <p class="text-[10px] font-bold text-primary/20 transition-all duration-300 text-right mt-1"
-                                   :class="activeJob === 'fenner' ? 'text-primary/50 text-[11px]' : ''">2018</p>
+                                     :class="activeJob === 'fenner' ? 'text-primary/50 text-[11px]' : ''">2018</p>
+                            </div>ext-primary/50 text-[11px]' : ''">2018</p>
                             </div>
 
                         </div>
@@ -1647,7 +1645,7 @@
                     trigger: ".timeline-list-container",
                     start: "top 30%",
                     end: "bottom 70%",
-                    scrub: 2.5
+                    scrub: 4.0
                 }
             });
 
@@ -1670,8 +1668,9 @@
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: item,
-                        start: "top 85%",
-                        toggleActions: "play none none none"
+                        start: "top 95%",
+                        end: "top 65%",
+                        scrub: 3.0
                     }
                 });
 
@@ -1702,8 +1701,8 @@
             gsap.to(".timeline-details-panel", {
                 x: 0,
                 opacity: 1,
-                duration: 0.8,
-                ease: "power3.out",
+                duration: 1.5,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: "#experience",
                     start: "top 70%",
